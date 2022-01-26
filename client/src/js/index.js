@@ -1,10 +1,7 @@
-import css from "../css/index.css"
-
-import * as createjs from 'createjs-module'
 import { Tween, Ticker } from "@createjs/tweenjs"
 
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 function range(start, end, interval = 0) {
     let arr = [];
@@ -30,14 +27,13 @@ const Colors = {
     orange: 0xFF9E00,
     yellow: 0xffd000
 }
-
 let camera, scene, renderer, controls, clock
 
 var lights = []
 
 let stage
 
-let width = window.innerWidth
+let width = window.innerWidth * .8
 let height = window.innerHeight
 
 const baseRadius = width / 38.4
@@ -67,11 +63,10 @@ function init() {
     lights.forEach((light) => {
         scene.add(light)
     })
-
-    renderer = new THREE.WebGLRenderer({ antialias: true })
+    renderer = new THREE.WebGLRenderer({ antialias: true})
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.setSize(width, height)
-    document.body.appendChild(renderer.domElement)
+    document.querySelector('div#main').appendChild(renderer.domElement)
 
     controls = new OrbitControls( camera, renderer.domElement )
 
@@ -79,7 +74,7 @@ function init() {
 
     stage = new THREE.Mesh(
         new THREE.PlaneGeometry( baseRadius * 250, baseRadius * 250, 10, 10 ),
-        new THREE.MeshBasicMaterial( { color: Colors.white, side: THREE.DoubleSide, wireframe:true } )
+        new THREE.MeshBasicMaterial( { color: 0x333333, side: THREE.DoubleSide, wireframe:true } )
     )
     stage.rotateX( Math.PI / 2 )
     stage.translateZ( baseRadius * 5 )
@@ -90,7 +85,12 @@ function init() {
 
 class Atom {
 
-    constructor(protons, neutrons, shells) {
+    constructor(protons, neutrons, shells, symbol) {
+        this.spin = Math.floor(Math.random() * 2) == 1 ? -1 : 1 
+        this.symbol = symbol
+        this.protons = protons
+        this.neutrons = neutrons
+
         const Atom = new THREE.Group()
         this.atomParameters = { protons, neutrons, shells }
 
@@ -107,6 +107,18 @@ class Atom {
         this.Atom = Atom 
     }
 
+    getSymbolInHTML() {
+        return `
+            <span>
+                <span class="supsub">
+                    <span>${this.protons + this.neutrons}</span>
+                    <span>${this.protons}</span>
+                </span>
+                ${this.symbol}
+            </span> 
+        `
+    }
+
     getMesh() {
         return this.Atom
     }
@@ -121,7 +133,7 @@ class Atom {
         
         this.shells.forEach( (shell, i) => {
             
-            const angle = ( baseRotation() + ( i + 1 ) **-1 ) / 30
+            const angle = ( baseRotation() + ( i + 1 ) **-1 ) / 30 * this.spin
             shell.rotateX( angle )
             shell.rotateY( angle )
             shell.rotateZ( angle )
@@ -233,7 +245,10 @@ class Atom {
 }
 
 class WaveParticle {
-    constructor( length, color, rotate ) {
+    constructor( length, color, rotate, symbol, sup ) {
+        this.symbol = symbol
+        this.sup = sup || ''
+
         this.length = length
         this.Positron = new THREE.Group()
         this.color = color
@@ -251,6 +266,15 @@ class WaveParticle {
         this.Positron.rotateZ( rotate )
     }
 
+    getSymbolInHTML() {
+        return `
+            <span>
+                ${this.symbol}
+                <sup>${this.sup}</sup>
+            </span>
+        `
+    }
+
     getMesh() {
         return this.Positron
     }
@@ -260,7 +284,7 @@ class WaveParticle {
     animate() {
         const time = clock.getElapsedTime()
         const looptime = this.looptime
-        const t = ( time % looptime ) / looptime
+        let t = ( time % looptime ) / looptime
 
         if( this.Positron.children[1] ) {
             this.Positron.remove( this.Positron.children[1] )           
@@ -268,7 +292,7 @@ class WaveParticle {
 
         if(t < this.tLast) {
             const {x, z} = this.Positron.children[0].position
-            this.Positron.children[0].position.set( x, this.path.getPointAt( t ).y , z)
+            this.Positron.children[0].position.set( x, this.positronCurvePoints[this.positronCurvePoints.length-1].y , z)
 
             const count = this.positronCurvePoints.length
 
@@ -308,7 +332,10 @@ class WaveParticle {
 }
 
 class LineParticle {
-    constructor( length, color, rotate ) {
+    constructor( length, color, rotate, symbol, sup ) {
+        this.symbol = symbol
+        this.sup = sup || ''
+
         this.length = length
         this.Positron = new THREE.Group()
         this.color = color
@@ -323,6 +350,15 @@ class LineParticle {
         this.looptime = length / 5
         this.Positron.add( sphere )
         this.Positron.rotateZ(rotate)
+    }
+
+    getSymbolInHTML() {
+        return `
+            <span>
+                ${this.symbol}
+                <sup>${this.sup}</sup>
+            </span>
+        `
     }
 
     getMesh() {
@@ -379,14 +415,22 @@ class NuclearReaction {
         this.products = products || []
         this.subProducts = subProducts || []
 
+        this.allowAnimateFunc = false
+
         this.#setReagents( this.reagents )
         this.#tweenAnimation( reagents, products, subProducts )
     }
 
     animate() {
-        [...this.reagents, ...this.products, ...this.subProducts].forEach( (element) => {
+        [...this.reagents, ...this.products].forEach( (element) => {
             element.animate()
         })
+
+        if(this.allowAnimateFunc) {
+            this.subProducts.forEach( (subProduct) => {
+                subProduct.animate()
+            })
+        }
     }
 
     #tweenAnimation( reagents, products, subProducts ) {
@@ -415,9 +459,19 @@ class NuclearReaction {
                     this.#tweenProduct(products, product, i )
                 })
         })
+
+        setTimeout( () => {
+            clock.elapsedTime = 0
+
+            this.allowAnimateFunc = true
+            subProducts.forEach( (subProduct) => {
+                scene.add( subProduct.getMesh() )
+            })
+        }, 2200)
     }
 
     #tweenProduct(products, product, i ) {
+        
         if(i === 0){
             product.getMesh().position.set(0, 0, 0)
         } else {
@@ -430,7 +484,6 @@ class NuclearReaction {
                 z: baseRadius * 50 * Math.sin( angleIncrement * i )
             }, 2000)
         }
-
     }
 
     #setReagents( reagents ) {
@@ -448,21 +501,74 @@ class NuclearReaction {
 
 }
 
+class ReactionEquation {
+    constructor( reagents, products, subProducts ) {
+        this.reagents = reagents || []
+        this.products = products || []
+        this.subProducts = subProducts || []
+    }
+
+    getHTML () {
+        let HTML = ''
+        this.reagents.forEach( (reagent, i) => {
+            HTML += reagent.getSymbolInHTML()
+            if( i != this.reagents.length-1) {
+                HTML += '<span>+</span>'
+            } else {
+                HTML += '<span>→</span>'    
+            }
+        })
+        this.products.forEach( (product, i) => {
+            HTML += product.getSymbolInHTML()
+            if( i != this.products.length-1) {
+                HTML += '<span>+</span>'
+            } else if( this.subProducts.length != 0 ){
+                HTML += '<span>+</span>'
+            }
+        })
+        this.subProducts.forEach( (subProduct, i) => {
+            HTML += subProduct.getSymbolInHTML()
+            if( i != this.subProducts.length-1) {
+                HTML += '<span>+</span>'
+            }
+        })
+        return HTML
+    }
+}
 
 const reagents = [
-    new Atom(2, 1, [2] ),
-    new Atom(2, 1, [2] ),
+    new Atom(1, 0, [1], 'H' ),
+    new Atom(1, 0, [1], 'H' ),
+    new Atom(1, 0, [1], 'H' ),
+    new Atom(1, 0, [1], 'H' ),
+    new Atom(1, 0, [1], 'H' ),
+    new Atom(1, 0, [1], 'H' ),  
+    new Atom(1, 0, [1], 'H' ),
+    new Atom(1, 0, [1], 'H' ),
 ]
 
 const products = [
-    new Atom(2, 2, [2] ),
-    new Atom(1, 0, [1] ),
-    new Atom(1, 0, [1] ),
+    new Atom(1, 1, [1], 'D' ),
+    new Atom(1, 1, [1], 'D' ),
+    new Atom(1, 1, [1], 'D' ),
+    new Atom(1, 1, [1], 'D' ),
+    new Atom(1, 1, [1], 'D' ),
 ]
 
-const a = new NuclearReaction(reagents, products)
+const subProducts = [
+    new WaveParticle(baseRadius*0.5, Colors.purple, Math.PI*.75, 'p', '+'),
+    new LineParticle(baseRadius*0.5, Colors.indigo, Math.PI*1.25, 'n'),
+]
+
+// console.log(new THREE.Color( parseInt('0xCC0000', 16) ))
 
 
+const a = new NuclearReaction(reagents, products, subProducts)
+
+const b = new ReactionEquation(reagents, products, subProducts)
+
+
+document.querySelector('.reaction-area').innerHTML = b.getHTML()
 
 var render = (time) => {
     requestAnimationFrame(render);
@@ -484,7 +590,7 @@ var render = (time) => {
 render()
 
 window.addEventListener('resize', ()=>{
-        camera.aspect = width/height
+        camera.aspect = width / height
         camera.updateProjectionMatrix()
         renderer.setSize(width, height)
     }, false)
