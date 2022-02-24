@@ -1,0 +1,112 @@
+{
+  "reactions": [
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 1
+        }
+      ],
+      "subProduts": []
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 1
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 1
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        }
+      ],
+      "subProduts": []
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 2
+        }
+      ],
+      "subProducts": []
+    }
+  ],
+  "atoms": [
+    {
+      "symbol": "H",
+      "title": "Hydrogen",
+      "protons": 1,
+      "shells": [
+        1
+      ],
+      "isotopes": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "symbol": "He",
+      "title": "Helium",
+      "protons": 2,
+      "shells": [
+        2
+      ],
+      "isotopes": [
+        2,
+        1
+      ]
+    }
+  ]
+}

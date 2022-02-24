@@ -14,8 +14,14 @@
     "edit-json-file": "^1.7.0",
     "electron": "^16.0.7",
     "electron-pug": "^2.0.0",
+    "electron-store": "^8.0.1",
+    "lowdb": "github:dankreiger/lowdb#chore/esm-cjs-hybrid-WITH-LIB",
+    "lowdb-node": "^3.0.2",
     "three": "^0.136.0",
     "webpack": "^5.67.0",
     "webpack-cli": "^4.9.2"
+  },
+  "devDependencies": {
+    "terser-webpack-plugin": "^5.3.1"
   }
 }

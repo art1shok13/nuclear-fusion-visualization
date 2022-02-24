@@ -1,0 +1,100 @@
+@font-face {
+    font-family: Outfit;
+    src: url(./fonts/Outfit-Regular.woff);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Outfit;
+}
+
+
+::-webkit-scrollbar {
+    height: .5em;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1F1F1F;
+}   
+
+body {
+    background-color: #131313;
+    color: #CCCCCC;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.area {
+    width: 93vw;
+    height: 25vh;
+    padding: .7em;
+    background-color: #0C0C0C;
+    overflow-y: scroll;
+}
+
+select {
+    color: #CCCCCC;
+    border: none;
+    width: 8em;
+    background-color: #131313;
+    cursor: pointer;
+}
+
+button.delete {
+    color: #CCCCCC;
+    border: none;
+    text-align: center;
+    width: 1em;
+    height: 1.45em;
+    background-color: #131313;
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+
+button:hover {
+    color: white;
+}
+
+.reaction-element {
+    display: inline-block;
+    margin-right: 1em;
+    margin-bottom: .5em;
+}
+
+.sub-element {
+    display: inline-block;
+    margin-bottom: .5em;
+}
+
+
+.add-reaction {
+    color: #CCCCCC;
+    border: none;
+    text-align: center;
+    width: 8em;
+    padding: .18em;
+    background-color: #131313;
+    animation-duration: 300ms;
+    cursor: pointer;
+}
+
+.submit {
+    width: 93vw;
+    /* height: 8vh; */
+    padding: .5em .7em;
+
+    border: none;
+    text-align: center;
+    color: #CCCCCC;
+    background-color: #0C0C0C;
+    animation-duration: 100ms;
+    cursor: pointer;
+}
