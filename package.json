@@ -4,24 +4,23 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "electron .",
-    "build": "webpack"
+    "start": "electron . "
   },
-  "author": "Roman Artyshevskyy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/art1shok13/nuclear-fusion-visualization.git"
+  },
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/art1shok13/nuclear-fusion-visualization/issues"
+  },
+  "homepage": "https://github.com/art1shok13/nuclear-fusion-visualization#readme",
   "dependencies": {
     "@createjs/tweenjs": "^2.0.0-beta.4",
-    "edit-json-file": "^1.7.0",
-    "electron": "^16.0.7",
-    "electron-pug": "^2.0.0",
-    "electron-store": "^8.0.1",
+    "electron": "^17.1.0",
     "lowdb": "github:dankreiger/lowdb#chore/esm-cjs-hybrid-WITH-LIB",
-    "lowdb-node": "^3.0.2",
-    "three": "^0.136.0",
-    "webpack": "^5.67.0",
-    "webpack-cli": "^4.9.2"
-  },
-  "devDependencies": {
-    "terser-webpack-plugin": "^5.3.1"
+    "three": "^0.138.2",
+    "three-orbitcontrols": "^2.110.3"
   }
 }

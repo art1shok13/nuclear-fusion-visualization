@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/reaction.css">
     <title>Візуалізація термоядерних реакцій</title>
 </head>
 <body>
@@ -12,8 +12,14 @@
     <div id="main"></div>
     <div id="option">
         <div class="reaction-area"></div>
+        <div class="clear"><button onclick="clearScene()">CLEAR SCENE</button></div>
         <div class="reaction-buttons"></div>
+        <div class="control-buttons">
+            <button onclick="editReaction()">Edit Reaction</button>
+            <button onclick="deleteReaction()">Delete Reaction</button>
+        </div>
     </div>
-    <script src="../dist/index.bundle.js"></script>
-    <script src="../src/js/ipc.js"></script>
+    <script src="../js/reaction.js"></script>
+    <script src="../js/classes.js"></script>
 </body>
+</html>

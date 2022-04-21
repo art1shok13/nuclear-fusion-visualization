@@ -5,12 +5,12 @@
         {
           "type": "atom",
           "id": 0,
-          "isotope": 0
+          "isotope": 1
         },
         {
           "type": "atom",
           "id": 0,
-          "isotope": 0
+          "isotope": 1
         }
       ],
       "products": [
@@ -20,7 +20,7 @@
           "isotope": 1
         }
       ],
-      "subProduts": []
+      "subProducts": []
     },
     {
       "reagents": [
@@ -52,7 +52,7 @@
           "isotope": 0
         }
       ],
-      "subProduts": []
+      "subProducts": []
     },
     {
       "reagents": [

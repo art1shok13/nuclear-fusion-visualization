@@ -43,6 +43,27 @@ function addReactionElement(a) {
     ipcRenderer.send('get-atoms', '')
 }
 
+function addReactionSubElement(a) {
+    html = `
+        <div class="reaction-element">
+            <input placeholder="Main Symbol" type="text">
+            <input placeholder="Sup Symbol" type="text">
+            <input type="color">
+            <button class="delete" onclick="deleteReactionElement(this)">&#215;</button>
+        </div>
+    `
+
+    let area = a.parentNode.parentNode
+    a.parentNode.remove()
+    const newElement = document.createElement('div')
+    newElement.innerHTML = html.trim()
+    area.appendChild(newElement.firstChild)
+
+    const plusButton = document.createElement('div')
+    plusButton.innerHTML = `<div class="sub-element"><button class="add-reaction" onclick="addReactionSubElement(this)">+</button></div>`.trim()
+    area.appendChild(plusButton.firstChild)
+}
+
 function updateIsotopeSelect(atomSelect) {
     const atomIndex = atomSelect.value
     ipcRenderer.once('get-atoms', (e, atoms) => {
@@ -65,11 +86,23 @@ async function submitReaction() {
         }).filter( (e)=>e!=undefined )
         return array
     }
+    const getArrayOfSubElements = async () => {
+        const array  = await [...document.querySelectorAll('.area')[2].childNodes].map( (item) => {
+            if( item.childNodes[1]?.tagName === 'INPUT' ) {
+                const input = item.childNodes[1]
+                const input1 = item.childNodes[3]
+                const input2 = item.childNodes[5]
+                return { type:'particle', symbol:input.value, sup:input1.value, color:input2.value }
+            }
+        }).filter( (e)=>e!=undefined )
+        return array
+    }
     const reaction = {
         reagents: await getArrayOfElements(0),
         products: await getArrayOfElements(1),
-        subProducts: []
+        subProducts: await getArrayOfSubElements()
     }
-
+    
     ipcRenderer.send('add-reaction', JSON.stringify(reaction))
 }
+

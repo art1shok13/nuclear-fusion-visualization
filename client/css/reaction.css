@@ -8,8 +8,6 @@
     margin: 0;
     overflow-y: hidden;
     font-family: Outfit;
-
-    /* overflow-x: hidden; */
 }
 
 .supsub {
@@ -29,6 +27,7 @@ body {
 
 canvas {
     background-color: black;
+    overflow-x: hidden;
 }
 
 #navbar {
@@ -90,6 +89,7 @@ canvas {
 }
 
 .reaction-buttons button {
+    overflow-x: hidden;
     width: 33%;
     text-align: center;
     border: none;
@@ -101,6 +101,50 @@ canvas {
 }
 
 .reaction-buttons button:hover {
+    border: 1px solid #131313;
+    color: white;
+}
+
+.control-buttons {
+    margin-bottom: 3em;
+}
+
+.control-buttons button {
+    color: #CCCCCC;
+    border: none;
+    text-align: center;
+    width: 8em;
+    height: 2em;
+    background-color: #0C0C0C;
+    cursor: pointer;
+}
+
+.control-buttons button:hover {
+    border: 1px solid #131313;
+    color: white;
+}
+
+.control-buttons button:disabled {
+    cursor: default;
+    border: 1px solid #0C0C0C;
+    color: #0C0C0C;
+}
+
+.clear {
+    margin-top: 1em;
+}
+.clear button {
+    border-radius: 5%;
+    color: #CCCCCC;
+    border: none;
+    text-align: center;
+    width: 15em;
+    height: 2em;
+    background-color: #0C0C0C;
+    cursor: pointer;
+}
+
+.clear button:hover {
     border: 1px solid #131313;
     color: white;
 }

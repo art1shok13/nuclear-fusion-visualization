@@ -5,7 +5,7 @@ const file = __dirname + '/json/db.json'
 const adapter = new JSONFile(file)
 const db = new Low(adapter)
 
-let mainWindow, addReactionWindow
+let mainWindow, addReactionWindow, editReactionWindow
 
 const createMainWindow = async () => {
     mainWindow = new BrowserWindow({
@@ -16,7 +16,15 @@ const createMainWindow = async () => {
             contextIsolation: false
         }
     })
-    await mainWindow.loadFile('./client/html/index.html')
+
+    mainWindow.on("resize", () => {
+        var size = mainWindow.getSize()
+        var width = size[0]
+        var height = size[1]
+        mainWindow.send("resized", {height, width})
+      })
+    
+    await mainWindow.loadFile('./client/html/reaction.html')
 }
 
 const init = async () => {
@@ -64,7 +72,41 @@ ipcMain.on('add-reaction', async (e, reaction) => {
     mainWindow.send('get-reactions', db.data.reactions)
     addReactionWindow.close()
 })
-// db.get('reactions')
-//   .remove({ id: 1 })
-//   .write()
+
+ipcMain.on('edit-reaction-window', async (e, reactionID) => {
+    if(editReactionWindow) return
+    editReactionWindow = new BrowserWindow({
+        parent: mainWindow,
+        width: 586,
+        height: 648,
+        resizable: false,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+        }
+    })
+    editReactionWindow.on('close', () => {
+        editReactionWindow = undefined
+    })
+    await editReactionWindow.loadFile('./client/html/editReaction.html')
+    await editReactionWindow.send("reaction", { reaction: JSON.stringify(db.data.reactions[reactionID]), reactionID })
+})
+
+ipcMain.on('change-reaction', (e, {reaction, reactionID}) => {
+    db.read()
+    db.data.reactions[reactionID] = JSON.parse(reaction)
+    db.write()
+    db.read()
+    mainWindow.send('get-reactions', db.data.reactions)
+    editReactionWindow.close()
+})
+
+ipcMain.on('delete-reaction', (e, reactionID) => {
+    db.read()
+    db.data.reactions.splice(reactionID, 1)
+    db.write()
+    mainWindow.send('get-reactions', db.data.reactions)
+})
+
+
 app.on('ready', init)

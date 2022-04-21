@@ -48,6 +48,25 @@ select {
     cursor: pointer;
 }
 
+input {
+    padding: .1em;
+    color: #CCCCCC;
+    outline: none;
+    border: none;
+    width: 7em;
+    background-color: #131313;
+    cursor: pointer;
+}
+input[type=color] {
+    padding: .1em;
+    color: #CCCCCC;
+    border: none;
+    width: 2em;
+    height: 1.4em;
+    background-color: #131313;
+    cursor: pointer;
+}
+
 button.delete {
     color: #CCCCCC;
     border: none;
