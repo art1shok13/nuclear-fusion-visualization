@@ -49,6 +49,10 @@ function addReactionSubElement(a) {
             <input placeholder="Main Symbol" type="text">
             <input placeholder="Sup Symbol" type="text">
             <input type="color">
+            <select>
+                <option value="0">Sinusoidal</option>
+                <option value="1">Line</option>
+            </select>
             <button class="delete" onclick="deleteReactionElement(this)">&#215;</button>
         </div>
     `
@@ -92,7 +96,8 @@ async function submitReaction() {
                 const input = item.childNodes[1]
                 const input1 = item.childNodes[3]
                 const input2 = item.childNodes[5]
-                return { type:'particle', symbol:input.value, sup:input1.value, color:input2.value }
+                const select = item.childNodes[7]
+                return { type:'particle', symbol:input.value, sup:input1.value, color:input2.value, lineType:Number(select.value) }
             }
         }).filter( (e)=>e!=undefined )
         return array

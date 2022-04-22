@@ -22,5 +22,8 @@
     "lowdb": "github:dankreiger/lowdb#chore/esm-cjs-hybrid-WITH-LIB",
     "three": "^0.138.2",
     "three-orbitcontrols": "^2.110.3"
+  },
+  "devDependencies": {
+    "electron-winstaller": "^5.0.0"
   }
 }

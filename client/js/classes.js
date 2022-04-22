@@ -251,7 +251,7 @@ class WaveParticle {
 }
 
 class LineParticle {
-    constructor(length, color, rotate, symbol, sup) {
+    constructor(length, color, symbol, sup) {
         this.symbol = symbol
         this.sup = sup || ''
 
@@ -268,7 +268,7 @@ class LineParticle {
         )
         this.looptime = length / 5
         this.Positron.add(sphere)
-        this.Positron.rotateZ(rotate)
+        this.Positron.rotateZ(Math.floor(Math.random() * 2*Math.PI))
     }
 
     getSymbolInHTML() {

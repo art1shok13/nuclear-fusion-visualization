@@ -1,3 +1,5 @@
 /node_modules
 /nuclear-fusion-visualization-linux-x64
 /nuclear-fusion-visualization-win32-x64
+build.js
+/build

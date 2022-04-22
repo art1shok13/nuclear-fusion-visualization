@@ -106,8 +106,12 @@ function useReaction(reactionId) {
     const products = JSON.parse(localStorage.reactions)[reactionId]['products'].map((element) => {
         return atomMap(element)
     })
-    const subProducts = JSON.parse(localStorage.reactions)[reactionId]['subProducts'].map(({color, symbol, sup}) => {
-        return new WaveParticle(baseRadius*.7, color, symbol, sup)
+    const subProducts = JSON.parse(localStorage.reactions)[reactionId]['subProducts'].map(({color, symbol, sup, lineType}) => {
+            if(lineType==0){
+                return new WaveParticle(baseRadius*.7, color, symbol, sup)
+            }else{
+                return new LineParticle(baseRadius*.7, color, symbol, sup)
+            }    
     })
 
     if(currentReaction.stage == 0) {

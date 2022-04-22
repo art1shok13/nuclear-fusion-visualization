@@ -76,6 +76,10 @@ function addReactionSubElement(a, options) {
             <input placeholder="Main Symbol" type="text">
             <input placeholder="Sup Symbol" type="text">
             <input type="color">
+            <select>
+                <option value="0">Sinusoidal</option>
+                <option value="1">Line</option>
+            </select>
             <button class="delete" onclick="deleteReactionElement(this)">&#215;</button>
         </div>
     `
@@ -84,13 +88,13 @@ function addReactionSubElement(a, options) {
     const newElement = document.createElement('div')
     newElement.innerHTML = html.trim()
     if(options){
-        console.log(options)
-        const {sup, symbol, color} = options
+        const {sup, symbol, color, lineType} = options
         
-        let selects = newElement.firstChild.querySelectorAll('input')
-        selects[0].value = symbol
-        selects[1].value = sup
-        selects[2].value = color
+        let inputs = newElement.firstChild.querySelectorAll('input')
+        inputs[0].value = symbol
+        inputs[1].value = sup
+        inputs[2].value = color
+        newElement.firstChild.querySelector('select').value = lineType
     }
 
     area.querySelector('.sub-element').remove()
@@ -118,7 +122,8 @@ async function submitReaction() {
                 const input = item.childNodes[1]
                 const input1 = item.childNodes[3]
                 const input2 = item.childNodes[5]
-                return { type:'particle', symbol:input.value, sup:input1.value, color:input2.value }
+                const select = item.childNodes[7]
+                return { type:'particle', symbol:input.value, sup:input1.value, color:input2.value, lineType:Number(select.value) }
             }
         }).filter( (e)=>e!=undefined )
         return array

@@ -20,7 +20,22 @@
           "isotope": 1
         }
       ],
-      "subProducts": []
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "p",
+          "sup": "+",
+          "color": "#ff00ea",
+          "lineType": 0
+        },
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
     },
     {
       "reagents": [
@@ -50,33 +65,6 @@
           "type": "atom",
           "id": 0,
           "isotope": 0
-        }
-      ],
-      "subProducts": []
-    },
-    {
-      "reagents": [
-        {
-          "type": "atom",
-          "id": 0,
-          "isotope": 0
-        },
-        {
-          "type": "atom",
-          "id": 0,
-          "isotope": 0
-        },
-        {
-          "type": "atom",
-          "id": 0,
-          "isotope": 0
-        }
-      ],
-      "products": [
-        {
-          "type": "atom",
-          "id": 0,
-          "isotope": 2
         }
       ],
       "subProducts": []

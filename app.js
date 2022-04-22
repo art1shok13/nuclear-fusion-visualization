@@ -1,11 +1,14 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
-const { Low, JSONFile } = require('lowdb')
+const { app, BrowserWindow, ipcMain, Menu} = require('electron')
+const { LowSync, JSONFileSync } = require('lowdb')
 
 const file = __dirname + '/json/db.json'
-const adapter = new JSONFile(file)
-const db = new Low(adapter)
+const adapter = new JSONFileSync(file)
+const db = new LowSync(adapter)
 
 let mainWindow, addReactionWindow, editReactionWindow
+
+//Menu.setApplicationMenu(Menu.buildFromTemplate([]))
+
 
 const createMainWindow = async () => {
     mainWindow = new BrowserWindow({
