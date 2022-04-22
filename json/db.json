@@ -68,6 +68,732 @@
         }
       ],
       "subProducts": []
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 1
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 3,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 3,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 4,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 5,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 5,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 6,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 6,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 7,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 7,
+          "isotope": 2
+        },
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 8,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 7,
+          "isotope": 1
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 9,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 5,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 5,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 10,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 9,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 11,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 11,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 12,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 1
+        }
+      ],
+      "subProducts": []
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 7,
+          "isotope": 1
+        },
+        {
+          "type": "atom",
+          "id": 7,
+          "isotope": 1
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 13,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "subProducts": []
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 7,
+          "isotope": 1
+        },
+        {
+          "type": "atom",
+          "id": 7,
+          "isotope": 1
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 14,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        }
+      ],
+      "subProducts": []
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 7,
+          "isotope": 1
+        },
+        {
+          "type": "atom",
+          "id": 7,
+          "isotope": 1
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 15,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 14,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 16,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 15,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 17,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 16,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 18,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 17,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 18,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 17,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 19,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 18,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 20,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 19,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 21,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 23,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 22,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 0,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 21,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 23,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 22,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 24,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
+    },
+    {
+      "reagents": [
+        {
+          "type": "atom",
+          "id": 23,
+          "isotope": 0
+        },
+        {
+          "type": "atom",
+          "id": 1,
+          "isotope": 0
+        }
+      ],
+      "products": [
+        {
+          "type": "atom",
+          "id": 25,
+          "isotope": 0
+        }
+      ],
+      "subProducts": [
+        {
+          "type": "particle",
+          "symbol": "y",
+          "sup": "",
+          "color": "#ffae00",
+          "lineType": 1
+        }
+      ]
     }
   ],
   "atoms": [
@@ -94,6 +820,320 @@
       "isotopes": [
         2,
         1
+      ]
+    },
+    {
+      "symbol": "Li",
+      "title": "Lithium",
+      "protons": 4,
+      "shells": [
+        2,
+        1
+      ],
+      "isotopes": [
+        3
+      ]
+    },
+    {
+      "symbol": "Be",
+      "title": "Beryllium",
+      "protons": 4,
+      "shells": [
+        2,
+        2
+      ],
+      "isotopes": [
+        3
+      ]
+    },
+    {
+      "symbol": "B",
+      "title": "Boron",
+      "protons": 4,
+      "shells": [
+        2,
+        3
+      ],
+      "isotopes": [
+        4
+      ]
+    },
+    {
+      "symbol": "C",
+      "title": "Carbon",
+      "protons": 7,
+      "shells": [
+        2,
+        4
+      ],
+      "isotopes": [
+        6
+      ]
+    },
+    {
+      "symbol": "N",
+      "title": "Nitrogen",
+      "protons": 7,
+      "shells": [
+        2,
+        5
+      ],
+      "isotopes": [
+        7
+      ]
+    },
+    {
+      "symbol": "O",
+      "title": "Oxygen",
+      "protons": 8,
+      "shells": [
+        2,
+        6
+      ],
+      "isotopes": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "symbol": "F",
+      "title": "Flourine",
+      "protons": 9,
+      "shells": [
+        2,
+        7
+      ],
+      "isotopes": [
+        9
+      ]
+    },
+    {
+      "symbol": "Ne",
+      "title": "Neon",
+      "protons": 10,
+      "shells": [
+        2,
+        8
+      ],
+      "isotopes": [
+        10
+      ]
+    },
+    {
+      "symbol": "Na",
+      "title": "Sodium",
+      "protons": 12,
+      "shells": [
+        2,
+        8,
+        1
+      ],
+      "isotopes": [
+        11
+      ]
+    },
+    {
+      "symbol": "Mg",
+      "title": "Magnesium",
+      "protons": 12,
+      "shells": [
+        2,
+        8,
+        2
+      ],
+      "isotopes": [
+        12
+      ]
+    },
+    {
+      "symbol": "Al",
+      "title": "Aluminum",
+      "protons": 13,
+      "shells": [
+        2,
+        8,
+        3
+      ],
+      "isotopes": [
+        13
+      ]
+    },
+    {
+      "symbol": "Si",
+      "title": "Silicon",
+      "protons": 14,
+      "shells": [
+        2,
+        8,
+        4
+      ],
+      "isotopes": [
+        14
+      ]
+    },
+    {
+      "symbol": "P",
+      "title": "Phosphorus",
+      "protons": 16,
+      "shells": [
+        2,
+        8,
+        5
+      ],
+      "isotopes": [
+        15
+      ]
+    },
+    {
+      "symbol": "S",
+      "title": "Sulfur",
+      "protons": 16,
+      "shells": [
+        2,
+        8,
+        6
+      ],
+      "isotopes": [
+        16
+      ]
+    },
+    {
+      "symbol": "Cl",
+      "title": "Chlorine",
+      "protons": 18,
+      "shells": [
+        2,
+        8,
+        7
+      ],
+      "isotopes": [
+        17
+      ]
+    },
+    {
+      "symbol": "Ar",
+      "title": "Argon",
+      "protons": 18,
+      "shells": [
+        2,
+        8,
+        8
+      ],
+      "isotopes": [
+        18
+      ]
+    },
+    {
+      "symbol": "K",
+      "title": "Potassium",
+      "protons": 20,
+      "shells": [
+        2,
+        8,
+        8,
+        1
+      ],
+      "isotopes": [
+        19
+      ]
+    },
+    {
+      "symbol": "Ca",
+      "title": "Calcium",
+      "protons": 20,
+      "shells": [
+        2,
+        8,
+        8,
+        2
+      ],
+      "isotopes": [
+        20
+      ]
+    },
+    {
+      "symbol": "Sc",
+      "title": "Scandium",
+      "protons": 22,
+      "shells": [
+        2,
+        8,
+        9,
+        2
+      ],
+      "isotopes": [
+        21
+      ]
+    },
+    {
+      "symbol": "Ti",
+      "title": "Titanium",
+      "protons": 22,
+      "shells": [
+        2,
+        8,
+        10,
+        2
+      ],
+      "isotopes": [
+        22
+      ]
+    },
+    {
+      "symbol": "V",
+      "title": "Vanadium",
+      "protons": 28,
+      "shells": [
+        2,
+        8,
+        11,
+        2
+      ],
+      "isotopes": [
+        23
+      ]
+    },
+    {
+      "symbol": "Cr",
+      "title": "Chromium",
+      "protons": 24,
+      "shells": [
+        2,
+        8,
+        13,
+        1
+      ],
+      "isotopes": [
+        24
+      ]
+    },
+    {
+      "symbol": "Mn",
+      "title": "Manganese",
+      "protons": 28,
+      "shells": [
+        2,
+        8,
+        13,
+        2
+      ],
+      "isotopes": [
+        25
+      ]
+    },
+    {
+      "symbol": "Fe",
+      "title": "Iron",
+      "protons": 26,
+      "shells": [
+        2,
+        8,
+        14,
+        2
+      ],
+      "isotopes": [
+        26
       ]
     }
   ]

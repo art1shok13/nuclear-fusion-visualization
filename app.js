@@ -44,7 +44,7 @@ ipcMain.on('add-reaction-window', async (e) => {
     addReactionWindow = new BrowserWindow({
         parent: mainWindow,
         width: 586,
-        height: 648,
+        height: 848,
         resizable: false,
         webPreferences: {
             nodeIntegration: true,
@@ -81,7 +81,7 @@ ipcMain.on('edit-reaction-window', async (e, reactionID) => {
     editReactionWindow = new BrowserWindow({
         parent: mainWindow,
         width: 586,
-        height: 648,
+        height: 848,
         resizable: false,
         webPreferences: {
             nodeIntegration: true,
