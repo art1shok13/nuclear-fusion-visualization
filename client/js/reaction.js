@@ -195,6 +195,8 @@ ipcRenderer.on('resized', (e, {height, width}) => {
     camera.aspect = width / height
     camera.updateProjectionMatrix()
     renderer.setSize(width, height)
+    camera.position.set(0, 1000, -5000)
+    controls.target = THREE.Vector3(0,0,0)
 })
 
 function editReaction(){
