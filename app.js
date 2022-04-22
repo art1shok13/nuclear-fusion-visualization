@@ -7,7 +7,7 @@ const db = new LowSync(adapter)
 
 let mainWindow, addReactionWindow, editReactionWindow
 
-//Menu.setApplicationMenu(Menu.buildFromTemplate([]))
+Menu.setApplicationMenu(Menu.buildFromTemplate([]))
 
 
 const createMainWindow = async () => {
