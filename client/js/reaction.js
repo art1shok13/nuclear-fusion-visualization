@@ -3,20 +3,6 @@ const { ipcRenderer } = require('electron')
 const THREE = require("three")
 const OrbitControls = require("three-orbitcontrols")
 
-function range(start, end, interval = 0) {
-    let arr = [];
-    interval = interval > 0 ? interval - 1 : 0
-    for (let i = start; i < end; i++) {
-        arr.push(i)
-        i += interval;
-    }
-    return arr
-}
-
-function map(value, range1From, range1To, range2From, range2To) {
-    return (value - range1From) * (range2To - range2From) / (range1To - range1From) + range2From;
-}
-
 const Colors = {
     red: 0xf25346,
     white: 0xd8d0d1,
@@ -44,18 +30,18 @@ function init() {
     // camera = new THREE.OrthographicCamera(width * scale / -2, width * scale / 2, height * scale / 2, height * scale / -2, -1000 * scale, 1000 * scale)
     camera = new THREE.PerspectiveCamera(45, width / height, 1, 100000)
     camera.position.z = -5000
-    camera.position.y = 1000
+    camera.position.y = 2000
 
     scene = new THREE.Scene()
 
     lights[0] = new THREE.PointLight(0xffffff, 0.1, 0)
-    lights[0].position.set(200, 0, 0)
+    lights[0].position.set(2000, 0, 0)
 
     lights[1] = new THREE.PointLight(0xffffff, 0.1, 0)
-    lights[1].position.set(0, 200, 0)
+    lights[1].position.set(0, 2000, 0)
 
     lights[2] = new THREE.PointLight(0xffffff, 0.1, 0)
-    lights[2].position.set(0, 100, 100)
+    lights[2].position.set(0, 1000, 100)
 
     lights[3] = new THREE.AmbientLight(0xffffff, 1)
 
@@ -83,6 +69,7 @@ function init() {
 //     new WaveParticle(baseRadius * 0.5, Colors.purple, Math.PI * .75, 'p', '+'),
 //     new LineParticle(baseRadius * 0.5, Colors.indigo, Math.PI * 1.25, 'n'),
 
+// setTimeout(()=>{scene.add(new Atom(118, 294-118, [], '').getMesh())}, 100)
 
 let currentReaction = {stage: 0}
 
@@ -92,7 +79,7 @@ function useReaction(reactionId) {
         const { id, isotope } = element
         const atom = JSON.parse(localStorage.atoms)[id]
         const protons = atom.protons
-        const neutrons = atom.isotopes[isotope]
+        const neutrons = atom.isotopes[isotope].neutrons
         const shells = atom.shells
         const symbol = atom.symbol
         
@@ -116,7 +103,7 @@ function useReaction(reactionId) {
 
     if(currentReaction.stage == 0) {
         scene.children.splice(5, scene.children.length)
-    
+        Tween.removeAllTweens()
         currentReaction = {
             reaction: new NuclearReaction(reagents, products, subProducts),
             equation: new ReactionEquation(reagents, products, subProducts),
@@ -140,11 +127,11 @@ function addReactionWindow() {
 
 function clearScene(){clear()}
 function clear(){
+    Tween.removeAllTweens()
     scene.children.splice(5, scene.children.length)
     currentReaction = {stage: 0}
     document.querySelector('.control-buttons').querySelectorAll('button').forEach((e) => {e.disabled=true})
     document.querySelector('.reaction-area').innerHTML = ''
-    
 }
 
 ipcRenderer.on('get-reactions', (e, reactions) => {
@@ -189,14 +176,14 @@ var render = (time) => {
         clock.elapsedTime = oldTime
     }
 }
-render()
+requestAnimationFrame(render)
 
 ipcRenderer.on('resized', (e, {height, width}) => {
     camera.aspect = width / height
     camera.updateProjectionMatrix()
     renderer.setSize(width, height)
     camera.position.set(0, 1000, -5000)
-    controls.target = THREE.Vector3(0,0,0)
+    controls.target = new THREE.Vector3(0,0,0)
 })
 
 function editReaction(){

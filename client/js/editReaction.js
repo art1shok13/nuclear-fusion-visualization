@@ -58,6 +58,7 @@ function addReactionElement(a, options) {
             
             let selects = newElement.firstChild.querySelectorAll('select')
             selects[0].value = id
+            selects[1].innerHTML = getIsotopeOptions(id)
             selects[1].value = isotope
         }
         area.querySelector('.sub-element').remove()
