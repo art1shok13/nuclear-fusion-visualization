@@ -105,9 +105,11 @@ async function submitReaction() {
     const reaction = {
         reagents: await getArrayOfElements(0),
         products: await getArrayOfElements(1),
-        subProducts: await getArrayOfSubElements()
+        subProducts: await getArrayOfSubElements(),
+        protected: false
     }
-    
+    if (reaction.reagents.length === 0) {alert('No Reagents Selected'); return;}
+    if (reaction.products.length === 0) {alert('No Products Selected'); return;}
     ipcRenderer.send('add-reaction', JSON.stringify(reaction))
 }
 

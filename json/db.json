@@ -35,7 +35,8 @@
           "color": "#0400ff",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -67,7 +68,8 @@
           "isotope": 0
         }
       ],
-      "subProducts": []
+      "subProducts": [],
+      "protected": true
     },
     {
       "reagents": [
@@ -97,7 +99,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -127,7 +130,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -162,7 +166,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -192,7 +197,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -222,7 +228,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -252,7 +259,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -282,7 +290,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -317,7 +326,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -347,7 +357,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -374,7 +385,8 @@
           "isotope": 1
         }
       ],
-      "subProducts": []
+      "subProducts": [],
+      "protected": true
     },
     {
       "reagents": [
@@ -401,7 +413,8 @@
           "isotope": 1
         }
       ],
-      "subProducts": []
+      "subProducts": [],
+      "protected": true
     },
     {
       "reagents": [
@@ -428,7 +441,8 @@
           "isotope": 0
         }
       ],
-      "subProducts": []
+      "subProducts": [],
+      "protected": true
     },
     {
       "reagents": [
@@ -458,7 +472,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -488,7 +503,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -518,7 +534,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -548,7 +565,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -578,7 +596,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -608,7 +627,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -638,7 +658,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -670,10 +691,11 @@
           "type": "particle",
           "symbol": "y",
           "sup": "",
-          "color": "#ffae00",
+          "color": "#fad000",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -703,7 +725,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -733,7 +756,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
+      ],
+      "protected": true
     },
     {
       "reagents": [
@@ -763,24 +787,8 @@
           "color": "#ffae00",
           "lineType": 1
         }
-      ]
-    },
-    {
-      "reagents": [
-        {
-          "type": "atom",
-          "id": 117,
-          "isotope": 0
-        }
       ],
-      "products": [
-        {
-          "type": "atom",
-          "id": 117,
-          "isotope": 0
-        }
-      ],
-      "subProducts": []
+      "protected": true
     }
   ],
   "atoms": [

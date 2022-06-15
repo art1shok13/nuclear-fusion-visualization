@@ -134,7 +134,8 @@ async function submitReaction() {
         products: await getArrayOfElements(1),
         subProducts: await getArrayOfSubElements()
     }
-    
+    if (reaction.reagents.length === 0) {alert('No Reagents Selected'); return;}
+    if (reaction.products.length === 0) {alert('No Products Selected'); return;}
     ipcRenderer.send('change-reaction', {reaction: JSON.stringify(reaction), reactionID: ID})
 }
 

@@ -18,12 +18,12 @@
   "homepage": "https://github.com/art1shok13/nuclear-fusion-visualization#readme",
   "dependencies": {
     "@createjs/tweenjs": "^2.0.0-beta.4",
-    "electron": "^17.1.0",
     "lowdb": "github:dankreiger/lowdb#chore/esm-cjs-hybrid-WITH-LIB",
     "three": "^0.138.2",
     "three-orbitcontrols": "^2.110.3"
   },
   "devDependencies": {
-    "electron-winstaller": "^5.0.0"
+    "electron-winstaller": "^5.0.0",
+    "electron": "^17.1.0"
   }
 }

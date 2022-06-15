@@ -7,7 +7,7 @@ const db = new LowSync(adapter)
 
 let mainWindow, addReactionWindow, editReactionWindow
 
-// Menu.setApplicationMenu(Menu.buildFromTemplate([]))
+Menu.setApplicationMenu(Menu.buildFromTemplate([]))
 
 
 const createMainWindow = async () => {
@@ -19,6 +19,7 @@ const createMainWindow = async () => {
             contextIsolation: false
         }
     })
+    mainWindow.maximize();
 
     mainWindow.on("resize", () => {
         var size = mainWindow.getSize()
@@ -27,6 +28,7 @@ const createMainWindow = async () => {
         mainWindow.send("resized", {height, width})
       })
     
+      
     await mainWindow.loadFile('./client/html/reaction.html')
 }
 

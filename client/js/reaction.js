@@ -18,6 +18,8 @@ var lights = []
 
 let stage
 
+let allowAnimation = true
+
 let width = window.innerWidth * .8
 let height = window.innerHeight
 
@@ -66,10 +68,6 @@ function init() {
     scene.add(stage)
     Ticker.framerate = 60
 }
-//     new WaveParticle(baseRadius * 0.5, Colors.purple, Math.PI * .75, 'p', '+'),
-//     new LineParticle(baseRadius * 0.5, Colors.indigo, Math.PI * 1.25, 'n'),
-
-// setTimeout(()=>{scene.add(new Atom(118, 294-118, [], '').getMesh())}, 100)
 
 let currentReaction = {stage: 0}
 
@@ -79,7 +77,7 @@ function useReaction(reactionId) {
         const { id, isotope } = element
         const atom = JSON.parse(localStorage.atoms)[id]
         const protons = atom.protons
-        const neutrons = atom.isotopes[isotope].neutrons
+        const neutrons = atom.isotopes[isotope]
         const shells = atom.shells
         const symbol = atom.symbol
         
@@ -93,6 +91,7 @@ function useReaction(reactionId) {
     const products = JSON.parse(localStorage.reactions)[reactionId]['products'].map((element) => {
         return atomMap(element)
     })
+    const protected = JSON.parse(localStorage.reactions)[reactionId]['protected']
     const subProducts = JSON.parse(localStorage.reactions)[reactionId]['subProducts'].map(({color, symbol, sup, lineType}) => {
             if(lineType==0){
                 return new WaveParticle(baseRadius*.7, color, symbol, sup)
@@ -108,7 +107,8 @@ function useReaction(reactionId) {
             reaction: new NuclearReaction(reagents, products, subProducts),
             equation: new ReactionEquation(reagents, products, subProducts),
             stage: 1,
-            reactionId
+            reactionId,
+            protected
         }
         document.querySelector('.reaction-area').innerHTML = currentReaction.equation.getHTML()
 
@@ -132,6 +132,12 @@ function clear(){
     currentReaction = {stage: 0}
     document.querySelector('.control-buttons').querySelectorAll('button').forEach((e) => {e.disabled=true})
     document.querySelector('.reaction-area').innerHTML = ''
+}
+
+function animationToggle(button){
+    button.innerHTML = button.innerHTML==='STOP ANIMATION' ? 'RESUME ANIMATION':'STOP ANIMATION'
+    allowAnimation = button.innerHTML==='STOP ANIMATION'
+
 }
 
 ipcRenderer.on('get-reactions', (e, reactions) => {
@@ -164,16 +170,18 @@ var render = (time) => {
     renderer.render(scene, camera)
     controls.update()
 
-    if (document.hasFocus()) {
-        currentReaction?.reaction?.animate()
-    }
-
     let oldTime = clock.getElapsedTime()
     if (!document.hasFocus() && clock.running) {
         clock.stop()
     } else if (document.hasFocus() && !clock.running) {
         clock.start()
         clock.elapsedTime = oldTime
+    }
+
+    if (document.hasFocus() && allowAnimation) {
+        currentReaction?.reaction?.animate()
+    } else {
+        clock.stop()
     }
 }
 requestAnimationFrame(render)
@@ -187,8 +195,14 @@ ipcRenderer.on('resized', (e, {height, width}) => {
 })
 
 function editReaction(){
+    if(currentReaction.protected) {
+        return
+    }
     ipcRenderer.send('edit-reaction-window', currentReaction.reactionId)
 }
 function deleteReaction(){
+    if(currentReaction.protected) {
+        return
+    }
     ipcRenderer.send('delete-reaction', currentReaction.reactionId)
 }
